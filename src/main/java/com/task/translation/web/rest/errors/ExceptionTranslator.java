@@ -130,6 +130,19 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
     }
 
     @ExceptionHandler
+    public ResponseEntity<Problem> handleTranslationFailedException(
+        com.task.translation.service.translation.TranslationFailedException ex,
+        NativeWebRequest request
+    ) {
+        TranslationFailedException problem = new TranslationFailedException();
+        return create(
+            problem,
+            request,
+            HeaderUtil.createFailureAlert(applicationName, true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage())
+        );
+    }
+
+    @ExceptionHandler
     public ResponseEntity<Problem> handleUsernameAlreadyUsedException(
         com.task.translation.service.UsernameAlreadyUsedException ex,
         NativeWebRequest request

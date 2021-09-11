@@ -26,8 +26,17 @@
           </span>
         </a>
       </li>
+      <div *ngSwitchCase="true">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" routerLink="/translate-history" (click)="collapseNavbar()">
+            <span>
+              <span jhiTranslate="global.menu.history">History</span>
+            </span>
+          </a>
+        </li>
+      </div>
       <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-      <li
+      <!-- <li
         *ngSwitchCase="true"
         ngbDropdown
         class="nav-item dropdown pointer"
@@ -41,10 +50,10 @@
             <span jhiTranslate="global.menu.entities.main">Entities</span>
           </span>
         </a>
-        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
-          <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-        </ul>
-      </li>
+        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu"> -->
+      <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+      <!-- </ul>
+      </li> -->
       <li
         *jhiHasAnyAuthority="'ROLE_ADMIN'"
         ngbDropdown

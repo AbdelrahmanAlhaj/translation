@@ -308,10 +308,24 @@ public class UserService {
 
     /**
      * Gets a list of all the authorities.
+     *
      * @return a list of all the authorities.
      */
     @Transactional(readOnly = true)
     public List<String> getAuthorities() {
         return authorityRepository.findAll().stream().map(Authority::getName).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<User> getUserByLogin() {
+        return SecurityUtils.getCurrentUserLogin().flatMap(userRepository::findOneByLogin);
+    }
+
+    public long getCurrentUserId() {
+        return getUserByLogin().get().getId();
+    }
+
+    public List<User> getUsersWithAuthority(String authority) {
+        return userRepository.findByAuthorities_Name(authority);
     }
 }

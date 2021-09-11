@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-
-import { LANGUAGES } from 'app/config/language.constants';
-import { User } from '../user-management.model';
+import { LANGUAGES } from '../../../config/language.constants';
 import { UserManagementService } from '../service/user-management.service';
+import { User } from '../user-management.model';
 
 @Component({
   selector: 'jhi-user-mgmt-update',

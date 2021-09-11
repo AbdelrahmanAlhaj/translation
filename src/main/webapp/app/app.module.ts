@@ -11,17 +11,17 @@ import * as dayjs from 'dayjs';
 import { NgbDateAdapter, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { SERVER_API_URL } from './app.constants';
-import { ApplicationConfigService } from 'app/core/config/application-config.service';
+import { ApplicationConfigService } from './core/config/application-config.service';
 import './config/dayjs';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { EntityRoutingModule } from './entities/entity-routing.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { NgbDateDayjsAdapter } from './config/datepicker-adapter';
 import { fontAwesomeIcons } from './config/font-awesome-icons';
-import { httpInterceptorProviders } from 'app/core/interceptor/index';
-import { FindLanguageFromKeyPipe } from 'app/shared/language/find-language-from-key.pipe';
+import { httpInterceptorProviders } from './core/interceptor/index';
+import { FindLanguageFromKeyPipe } from './shared/language/find-language-from-key.pipe';
 import { translatePartialLoader, missingTranslationHandler } from './config/translation.config';
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';

@@ -12,13 +12,14 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-
+liquibase:
+  enabled: false
 logging:
   level:
-    ROOT: DEBUG
-    tech.jhipster: DEBUG
-    org.hibernate.SQL: DEBUG
-    com.task.translation: DEBUG
+    ROOT: INFO
+    tech.jhipster: INFO
+    org.hibernate.SQL: INFO
+    com.task.translation: INFO
 
 spring:
   devtools:
@@ -33,19 +34,18 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/translation
-    username: translation
-    password:
+    username: postgres
+    password: postgres
     hikari:
       poolName: Hikari
       auto-commit: false
   jpa:
     database-platform: tech.jhipster.domain.util.FixedPostgreSQL10Dialect
   liquibase:
-    # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
   mail:
-    host: localhost
-    port: 25
+    host: smtp.gmail.com
+    port: 587
     username:
     password:
   messages:
@@ -99,3 +99,11 @@ jhipster:
 # ===================================================================
 
 # application:
+translate:
+  languages:
+    x-rapidapi-key-name: x-rapidapi-key
+    x-rapidapi-key-value: 3ce7b2096bmsha90d07d7dbe8ce8p1c0c19jsn0457e43b1a04
+    x-rapidapi-host-name: x-rapidapi-host
+    x-rapidapi-host-value: deep-translate1.p.rapidapi.com
+    list-language-uri: https://deep-translate1.p.rapidapi.com/language/translate/v2/languages
+    translate-uri: https://deep-translate1.p.rapidapi.com/language/translate/v2

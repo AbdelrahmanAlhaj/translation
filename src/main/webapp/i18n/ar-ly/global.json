@@ -4,6 +4,7 @@
     "browsehappy": "أنت تستخدم متصفح <strong>قديم</strong> . من فضلك <a href=\"http://browsehappy.com/?locale=en\">قم بتحديث متصفحك</a> لتحسين تجربتك.",
     "menu": {
       "home": "الصفحة الرئيسية",
+      "history": "سجل الترجمة",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "الكيانات",
@@ -134,7 +135,8 @@
     "file": {
       "could.not.extract": "Could not extract file",
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
-    }
+    },
+    "translationfailed": "فشلت عملية الترجمة بهذه اللغات المختارة"
   },
   "footer": "هنا يضع الفووتر"
 }

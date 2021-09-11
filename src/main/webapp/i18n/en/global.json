@@ -4,6 +4,7 @@
     "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
     "menu": {
       "home": "Home",
+      "history": "History",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
@@ -49,7 +50,7 @@
         "authenticated": {
           "prefix": "If you want to ",
           "link": "sign in",
-          "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
+          "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin123\") <br/>- User (login=\"user\" and password=\"user123\")."
         },
         "register": {
           "noaccount": "You don't have an account yet?",
@@ -135,7 +136,8 @@
     "file": {
       "could.not.extract": "Could not extract file",
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
-    }
+    },
+    "translationfailed": "Translation failed with these selected languages"
   },
   "footer": "This is your footer"
 }

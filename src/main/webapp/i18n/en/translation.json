@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "history": {
+      "title": "Translation History"
+    },
+    "failed": "Translation process failed",
+    "id": "ID",
+    "text": "Original Test",
+    "translatedText": "Translated Text",
+    "sourceLanguage": "Source Language",
+    "targetLanguage": "Target Language",
+    "rank": "Rank",
+    "createdBy": "Created by",
+    "createdDate": "Created date",
+    "lastModifiedBy": "Modified by",
+    "lastModifiedDate": "Modified date",
+    "deleted": "A translation is deleted with identifier {{ param }}",
+    "successfully": "A Translation is successfully added to your history",
+    "delete": {
+      "question": "Are you sure you want to delete this Translation {{ ids }}?"
+    },
+    "home": {
+      "refreshListLabel": "Refresh List"
+    },
+    "updated": "A user is updated with identifier {{ param }}"
+  }
+}

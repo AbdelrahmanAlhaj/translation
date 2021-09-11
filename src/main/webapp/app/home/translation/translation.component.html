@@ -1,0 +1,39 @@
+<div class="row">
+  <jhi-alert-error></jhi-alert-error>
+  <jhi-alert></jhi-alert>
+
+  <div class="form-inline col-md-12">
+    <div class="form-group col-md-5">
+      <select id="srcLanguage" [(ngModel)]="translation.source">
+        <option *ngFor="let language of languages" [value]="language.language">{{ language.name }}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-5 offset-md-1">
+      <select id="targetLanguage" [(ngModel)]="translation.target">
+        <option *ngFor="let language of languages" [value]="language.language">{{ language.name }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-inline col-md-12">
+    <div class="form-group col-md-5">
+      <textarea class="form-control" [(ngModel)]="translation.q" rows="3" style="min-width: 100%"></textarea>
+    </div>
+    <div class="form-group col-md-1">
+      <button (click)="translateText()" [class.spinner]="isLoading" [disabled]="isLoading" class="btn btn-primary" style="min-width: 100%">
+        Translate
+      </button>
+    </div>
+    <div class="form-group col-md-5">
+      <textarea
+        class="form-control"
+        [(ngModel)]="translation.translatedText"
+        rows="3"
+        style="min-width: 100%"
+        disabled="disabled"
+      ></textarea>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "history": {
+      "title": "سجل الترجمة"
+    },
+    "failed": "فشلت عملت الترجمة",
+    "id": "ID",
+    "text": "النص",
+    "translatedText": "النص المترجم",
+    "sourceLanguage": "لغة النص",
+    "targetLanguage": "لغة الترجمة",
+    "rank": "التقييم",
+    "createdBy": "انشاء  بقبل",
+    "createdDate": "انشئ بتاريخ",
+    "lastModifiedBy": "أخر تعديل بقبل",
+    "lastModifiedDate": "اخر تعديل بتاريخ",
+    "deleted": "تم حذف الترجمة بالرمز  {{ param }}",
+    "successfully": "تم اضافة الترجمة بنجاح",
+    "delete": {
+      "question": "هل أنت متاكد من حذف هذه الترجمة ؟ {{ ids }}"
+    },
+    "home": {
+      "refreshListLabel": "اعادة تحميل"
+    },
+    "updated": "يتم تحديث المستخدم مع معرف{{ param }}"
+  }
+}

@@ -1,0 +1,104 @@
+<div>
+  <h2>
+    <span id="translation-page-heading" jhiTranslate="translation.history.title" data-cy="translationPageHeading">Translations</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="translation.home.refreshListLabel">Refresh List</span>
+      </button>
+      <button
+        type="button"
+        (click)="deleteHistory()"
+        class="btn btn-danger btn-info mr-2"
+        *ngIf="translations"
+        [disabled]="isDeletedDisabled"
+      >
+        <fa-icon icon="times"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="table-responsive" *ngIf="translations">
+    <table class="table table-striped" aria-describedby="translation-page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="transition.bind(this)">
+          <th scope="col" jhiSortBy="id">
+            <span jhiTranslate="global.field.id">ID</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="login">
+            <span jhiTranslate="translation.text">text</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="translatedText">
+            <span jhiTranslate="translation.translatedText">translatedText</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="sourceLanguage">
+            <span jhiTranslate="translation.sourceLanguage">sourceLanguage</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="targetLanguage">
+            <span jhiTranslate="translation.targetLanguage">targetLanguage</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="rank">
+            <span jhiTranslate="translation.rank">rank</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col">
+            <input type="checkbox" [(ngModel)]="isRootSelected" name="list_name" value="h1" (change)="checkUncheckAll()" />
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngIf="translations">
+        <tr *ngFor="let translation of translations; trackBy: trackIdentity">
+          <td>{{ translation.id }}</td>
+          <td>{{ translation.text }}</td>
+          <td>{{ translation.translatedText }}</td>
+          <td>{{ translation.sourceLanguage }}</td>
+          <td>{{ translation.targetLanguage }}</td>
+          <td>
+            <span *ngIf="!translation.rank">
+              <select [(ngModel)]="translation.rank" (change)="updateRank(translation)">
+                <option *ngFor="let rank of ranks" [value]="rank" [selected]="rank == translation.rank">
+                  {{ rank }}
+                </option>
+              </select>
+            </span>
+            <span *ngIf="translation.rank">
+              {{ translation.rank }}
+            </span>
+          </td>
+          <td>
+            <input type="checkbox" [(ngModel)]="translation.isSelected" value="{{ translation.id }}" (change)="isAllSelected()" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="translations">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="transition()"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
